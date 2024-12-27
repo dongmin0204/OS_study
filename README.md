@@ -4,7 +4,7 @@
 **스터디원:**
   - 김두현(https://github.com/uchut)
   - 백동민(https://github.com/dongmin0204)
-  - 김진욱
+  - 김진욱(https://github.com/enchupin)
 
 **스터디 시간:** 매주 일요일 3시 대면
 

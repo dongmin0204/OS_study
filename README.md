@@ -9,3 +9,79 @@
 **스터디 시간:** 매주 일요일 3시
 
 # 스터디 방식
+- [강의 링크](http://www.kocw.net/home/search/kemView.do?kemId=1046323) 주차별로 정해진 양의 챕터 강의 듣기
+- 주마다 배운 강의 내용을 정리하여 발표
+- 모르는 부분이나 어려웠던 부분들 공유
+- 각자 강의 내용과 관련된 문제 2개 이상씩 출제하여 풀이
+
+[참고 스터디](https://github.com/smothly/OS-study-7week-challenge?tab=readme-ov-file)
+
+# 주차별 계획표
+  - 1주차(12/27 ~ 1/5) - 1, 2, 3, 4, 5, 6, 7
+  - 2주차(1/6 ~ 1/12) - 8, 9, 10, 11
+  - 3주차(1/13 ~ 1/19) - 12, 13, 14, 15
+  - 4주차(1/20 ~ 1/26) - 16, 17, 18, 19
+  - 5주차(1/27 ~ 2/2) - 20, 21, 22, 23
+  - 6주차(2/3 ~ 2/9) - 24, 25, 26, 27, 28
+
+# 강의 목차
+Chapter 1
+
+  - 1 강의소개 - 28분
+  - 2 Introduction to Operating Systems - 1시간 8분
+
+Chapter 2
+
+  - 3 System Structure & Program Execution 1 - 52분
+  - 4 System Structure & Program Execution 2 - 57분
+
+Chapter 3
+
+  - 5 Process1 - 1시간
+  - 6 Process2 - 15분
+  - 7 Process3 - 15분
+
+Chapter 4
+
+  - 8 Process Management 1 - 11분
+  - 9 Process Management 2 - 1시간 8분
+
+Chapter 5
+
+  - 10 CPU Scheduling 1 - 1시간 5분
+  - 11 CPU Scheduling 2 / Process Synchronization 1 - 1시간 7분
+
+Chapter 6
+
+  - 12 Process Synchronization 1 - 28분
+  - 13 Process Synchronization 2 - 25분
+  - 14 Process Synchronization 3 - 1시간 2분
+  - 15 Process Synchronization 4 - 27분
+
+Chapter 7
+
+  - 16 Deadlocks 1 - 40분
+  - 17 Deadlocks 2 - 37분
+
+Chapter 8
+
+  - 18 Memory Management 1 - 1시간 6분
+  - 19 Memory Management 2 - 48분
+  - 20 Memory Management 3 - 39분
+  - 21 Memory Management 4 - 27분
+
+Chapter 9
+
+  - 22 Virtual Memory 1 - 44분
+  - 23 Virtual Memory 2 - 57분
+
+Chapter 10
+
+  - 24 File Systems 1 - 37분
+  - 25 File System Implementations 1 - 1시간 9분
+  - 26 File System Implementations 2 - 24분
+
+Chapter 11
+
+  - 27 Disk Management & Scheduling 1 - 35분
+  - 28 Disk Management & Scheduling 2 - 9분

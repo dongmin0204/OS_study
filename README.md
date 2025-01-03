@@ -1,6 +1,9 @@
 # OS_study
 **진행기간: 2024.12.27 ~ 2025.02.09**
 
+**관리감독**
+  - 킹갓엠페러충무로왕 대 재 원(https://github.com/220v-K)
+
 **스터디원:**
   - 김두현(https://github.com/uchut)
   - 백동민(https://github.com/dongmin0204)

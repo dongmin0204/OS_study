@@ -75,9 +75,12 @@ USER 및 다른 모든 SW와 HW를 연결하는 SW 계층
 
 ### Computer System Structure
 
+
 ![OS](https://velog.velcdn.com/images/buna1592/post/ad0fc35d-5088-49c7-b589-3db25bc75cf1/image.png)
 
+
 컴퓨터는 cpu와 Memory로 이루어져 있으며 I/O divice와 상호작용하는 구조를 가짐
+
 
 **computer**
    - Memory : 사용자 프로그램의 명령어와 데이터를 저장
@@ -85,6 +88,7 @@ USER 및 다른 모든 SW와 HW를 연결하는 SW 계층
 CPU의 연산속도는 매우 빠르기 때문에 시분할 방식(timer 활용)으로 Memory의 프로세스들을 수행한다.<br>
 따라서 I/O를 수행해야 할 때 비교적 느린 I/O 장치들을 기다리지 않고 device controller에 요청 후 계속해서 다른 명령어를 수행한다.<br>
 후에 I/O작업이 종료 되면 CPU에게 이를 알려주는 과정이 존재하는데 이를 interrupt(cpu에게 신호를 알리는 것)라고 한다.
+
 
 **I/O Device Controller**
    - 해당 I/O 장치 유형을 관리하는 일종의 작은 CPU
@@ -97,9 +101,11 @@ CPU의 연산속도는 매우 빠르기 때문에 시분할 방식(timer 활용)
 >
 > device controller(장치 제어기) : 각 장치를 통제하는 일종의 작은 CPU -> HW
 
+
 **Mode Bit**
 - 사용자 프로그램인지 OS인지 구분하기 위한 비트
 - Mode bit을 통해 하드웨어적으로 2가지 모드의 operation 지원 ( 1 사용자 모드, 0 모니터 모드 )
+
 
 **Timer**
 - 정해진 시간이 흐른 뒤 운영체제에게 제어권이 넘어가도록 인터럽트 발생
@@ -107,6 +113,7 @@ CPU의 연산속도는 매우 빠르기 때문에 시분할 방식(timer 활용)
 - 타이머 0이 되면 타이머 인터럽트 발생
 - CPU를 특정 프로그램이 독점하는 것으로부터 보호
 - Time Sharing 구현하기 위해 이용됨
+
 
 ### 입출력(I/O)의 수행
 모든 입출력 명령은 커널 모드에서만 가능(= 특권 명령)<br>
@@ -122,3 +129,60 @@ CPU의 연산속도는 매우 빠르기 때문에 시분할 방식(timer 활용)
 5. I/O 완료 시 제어권을 시스템콜 다음 명령으로 옮김
 
 ### DMA(Direct Memory Access)
+   - 빠른 I/O 장치를 메모리에 가까운 속도로 처리하기 위해 사용
+   - CPU의 중재없이 device controller가 device의 buffer storage의 내용을 메모리에 block 단위로 직접 전송
+   - 바이트 단위가 아니라 block 단위로 인터럽트 발생시킴
+**CPU는 DMA가 일을 다 하면 한번만 인터럽트 당함.**
+
+
+### 동기식 I/O 
+
+- I/O 요청 후 입출력작업이 완료된 후에야 제어가 사용자 프로그램에 넘어감
+- 방법 1
+  - I/O 끝날 때까지 CPU를 낭비시킴
+  - 매 시점 하나의 I/O만 가능
+- 방법 2
+  - I/O 완료될 때까지 해당 프로그램에게서 CPU 빼앗음
+  - 다른 프로그램에게 CPU 할당
+
+
+### 비동기식 I/O
+ - I/O 시작된 후 입출력 작업이 끝나기를 기다리지 않고 제어가 사용자 프로그램에 즉시 넘어감.
+
+### **I/O 수행 방식**
+
+1. Memory Mapped I/O
+   - 메모리와 I/O가 하나의 연속된 address 영역에 할당된다
+2. I/O-Mapped I/O
+   - 메모리와 I/O가 별개의 어드레스 영역에 할당되는 것을 의미한다.
+  
+
+## 저장장치 계층구조
+
+![OS](https://user-images.githubusercontent.com/33562226/54992343-6c618d80-5002-11e9-96d1-17b9c7bb25df.png)
+
+1. 휘발성
+   - 휘발성 저장장치 : 레지스터 / 캐시 / 메인 메모리
+   - 비휘발성 저장장치 : 하드디스크 / 광학 디스크 / 자기 테이프 등
+2. 속도 
+   - 계층이 올라갈수록 액세스 속도가 빠르다.
+3. 용량
+   - 계층이 올라갈수록 용량이 작고 비싸다.
+
+
+## 프로그램의 실행
+
+![OS](https://velog.velcdn.com/images/hvyongkim2/post/85a9354d-4496-4cba-a76d-481803b1a838/image.png)
+
+   - 프로그램마다 stack, data, code로 이루어진 Virtual memory를 가지며 필요한 부분을 물리적인 memory에 load하는 과정이 존재
+   - Physical memory는 메모리 낭비를 막기 위해 불필요한 부분들을 Swap area에 저장
+
+
+### 함수
+
+- 사용자 정의 함수
+- 라이브러리 함수
+  - 프로그램 실행 파일에 포함
+- 커널 함수
+  - 운영체제 프로그램 함수
+  - 커널 함수 호출 = 시스템 콜

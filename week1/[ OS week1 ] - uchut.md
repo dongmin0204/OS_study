@@ -1,5 +1,6 @@
 # CH 1. Introduction to Operating Systems
-**운영체제란?**
+
+### 운영체제란?
 
 운영체제는 컴퓨터 HW 바로 위에 설치되는 SW로서<br>
 USER 및 다른 모든 SW와 HW를 연결하는 SW 계층
@@ -71,6 +72,53 @@ USER 및 다른 모든 SW와 HW를 연결하는 SW 계층
    * 풍부한 지원 소프트웨어
 
 # CH 2. System Structure & Program Execution
-**컴퓨터 시스템 구조**
 
-![OS](https://blog.kakaocdn.net/dn/c14Gr5/btrUIm1wbB1/I9StliVDlL8GQwHStpqTuK/img.png)
+### Computer System Structure
+
+![OS](https://velog.velcdn.com/images/buna1592/post/ad0fc35d-5088-49c7-b589-3db25bc75cf1/image.png)
+
+컴퓨터는 cpu와 Memory로 이루어져 있으며 I/O divice와 상호작용하는 구조를 가짐
+
+**computer**
+   - Memory : 사용자 프로그램의 명령어와 데이터를 저장
+   - CPU : Memory로부터 명령어를 읽어서 실행
+CPU의 연산속도는 매우 빠르기 때문에 시분할 방식(timer 활용)으로 Memory의 프로세스들을 수행한다.<br>
+따라서 I/O를 수행해야 할 때 비교적 느린 I/O 장치들을 기다리지 않고 device controller에 요청 후 계속해서 다른 명령어를 수행한다.<br>
+후에 I/O작업이 종료 되면 CPU에게 이를 알려주는 과정이 존재하는데 이를 interrupt(cpu에게 신호를 알리는 것)라고 한다.
+
+**I/O Device Controller**
+   - 해당 I/O 장치 유형을 관리하는 일종의 작은 CPU
+   - CPU와 병렬로 실행되어 메모리 사이클을 놓고 경쟁한다. (누가 메모리에 접근할 것인가)
+   - 제어 정보를 위해 control register, status register을 가짐
+   - local buffer를 가짐
+   - I/O는 실제 device와 local buffer 사이에서 일어남
+   - I/O가 끝났을 경우 인터럽트로 CPU에 사실 알림
+> device driver(장치 구동기) : OS 코드 중 각 장치별 처리루틴 -> SW
+>
+> device controller(장치 제어기) : 각 장치를 통제하는 일종의 작은 CPU -> HW
+
+**Mode Bit**
+- 사용자 프로그램인지 OS인지 구분하기 위한 비트
+- Mode bit을 통해 하드웨어적으로 2가지 모드의 operation 지원 ( 1 사용자 모드, 0 모니터 모드 )
+
+**Timer**
+- 정해진 시간이 흐른 뒤 운영체제에게 제어권이 넘어가도록 인터럽트 발생
+- 매 클럭 틱 때마다 1감소
+- 타이머 0이 되면 타이머 인터럽트 발생
+- CPU를 특정 프로그램이 독점하는 것으로부터 보호
+- Time Sharing 구현하기 위해 이용됨
+
+### 입출력(I/O)의 수행
+모든 입출력 명령은 커널 모드에서만 가능(= 특권 명령)<br>
+사용자 프로그램이 입출력 명령을 수행하는 방법
+1. 사용자 프로그램은 입출력 명령을 수행할 수 없기 때문에 시스템 콜이라는 입출력 함수를 호출한다.
+   + System Call : cpu에게 인터럽트를 발생시켜 cpu제어권을 OS에게 넘기고 mode bit을 0으로 바꾸며 I/O 수행 (운영체제에게 I/O요청)
+2. trap을 사용하여 인터럽트 벡터의 특정 위치로 이동
+   + trap : sw 인터럽트
+3. 제어권이 인터럽트 벡터가 가리키는 인터럽트 서비스 루틴으로 이동
+   + 인터럽트 벡터 : 해당 인터럽트의 처리 루틴 주소를 가지고 있음
+   + 해당 인터럽트를 처리하는 커널 함수( = 인터럽트의 종류마다 정해진 처리 과정)
+4. 올바른 I/O 요청인지 확인 후 I/O 수행
+5. I/O 완료 시 제어권을 시스템콜 다음 명령으로 옮김
+
+### DMA(Direct Memory Access)

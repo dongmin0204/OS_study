@@ -5,5 +5,5 @@ https://www.notion.so/3-System-Structure-Program-Execution-1-1-172550b0eb03806d8
 
 
   
-https://www.notion.so/4-System-Structure-Program-Execution-2-172550b0eb03809ab7edfe0e08991ec8
+https://www.notion.so/4-System-Structure-Program-Execution-2-172550b0eb03809ab7edfe0e08991ec8?pvs=4
   

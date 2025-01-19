@@ -8,8 +8,9 @@
 1. 프로세스의 state 중에서 Suspended는 일반 state의 차이가 어떻게 되고, suspended로 얻을 수 있는 것은?  
 2. 한 프로세스에서 나온 쓰레드들은 무엇을 공유하고, 무엇이 다른가?  
 3. 프로세스의 자식 부모 관계는 __구조 이다.  
-4. 프로세스에서 folk() 실행 시, 자식 프로세스는 부모 클래스의 Program counter와 같을까?  
-5. 다음 코드를 실행했을 때 출력값을 말하여라.
+4. 프로세스에서 folk() 실행 시, 자식 프로세스는 부모 클래스의 Program counter와 같을까?
+5. System call이나 Interrupt 발생시 반드시 Context Switch가 일어나는 것인가? 만약에 같은 프로세스에서 interupt 발생 시 캐시 메모리 상태는?
+6. 다음 코드를 실행했을 때 출력값을 말하여라.
    ```c
    // parent.c
    #include <stdio.h>
@@ -30,9 +31,11 @@
            printf("Fork failed\n");
        }
        return 0;
-   }
-6. SRTF의 문제점 2가지는?
-7. 다음은 네 개의 프로세스가 실행되는 상황이다. 각 프로세스의 도착 시간, 실행 시간, 그리고 우선순위가 아래와 같이 주어졌다.
+   }  
+7. CPU bounded burst와 I/O bounded burst의 차이점은?
+8. SRTF의 문제점 2가지는?
+9. 그 2가지 문제점을 해결하기 위한 방안은?
+10. 다음은 네 개의 프로세스가 실행되는 상황이다. 각 프로세스의 도착 시간, 실행 시간, 그리고 우선순위가 아래와 같이 주어졌다.
    
   
 | Process | Arrival Time | Burst Time | Priority (1 = High) |

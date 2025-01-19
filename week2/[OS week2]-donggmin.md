@@ -20,7 +20,7 @@
        printf("Start\n");
        pid = fork();
 
-       if (pid > 0) { // 부모 프로세스
+       if (pid > 0) { // 부모 프로세스 pid는 각자 생각하는 값으로
            printf("Parent Process: pid = %d\n", pid);
        } else if (pid == 0) { // 자식 프로세스
            printf("Child Process\n");

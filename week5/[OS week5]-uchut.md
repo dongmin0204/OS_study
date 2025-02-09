@@ -9,4 +9,5 @@
 
 3. pff 와 working-set 기법에서 특정 프로세스에게 할당할 빈 프레임이 없을 경우 어떻게 대처하는가
 
-4. 32비트 주소체계의 page table을 64비트 주소체계의 page table로 바꿀때 각 p1, p2, d는 몇 비트씩 가져야하는가?
+4. 32비트 주소체계의 page table을 64비트 주소체계의 page table로 바꿀때 각 p1, p2, d는 몇 비트씩 가져야하는가? (p1은 outer page table의 index이고 p2는 outer page table의 page에서의 변위이고 d는 page offset)
+![image](https://github.com/user-attachments/assets/2c5b5395-aab5-4834-858b-8e919dd9902a)

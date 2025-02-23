@@ -1,7 +1,7 @@
-[os 6주자](https://broadleaf-meadow-afa.notion.site/OS-6-1a05dda05b8d8006a230f3dd4a25b1b7?pvs=4)
+[os 6주차](https://broadleaf-meadow-afa.notion.site/OS-6-1a05dda05b8d8006a230f3dd4a25b1b7?pvs=4)
 ---
 ## Quiz
-1. 일반적으로 파일 테이블을 하나 더 구현하는 이유를 설명하시오. (오프셋)
+1. 일반적으로 파일 테이블을 하나 더 구현하는 이유를 설명하시오.
 
 2. 메모리 관리에 있어서 페이징 기법을 사용할때 LFU, LRU 알고리즘을 사용할 수 없지만 시스템 콜에서는 LFU, LRU 알고리즘을 사용 가능한 이유를 설명하시오. 
 
